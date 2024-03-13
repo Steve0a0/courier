@@ -1,7 +1,8 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Advent+Pro:ital,wght@0,100..900;1,100..900&display=swap');
 
-  .containerr {
+
+.containerr {
     height: 600px;
     padding: 20px;
     margin-left: 40px;
@@ -72,41 +73,67 @@
   
   .track form {
     margin-top: 30px; 
-    padding-left: 10px;/* Margin for the form */
+    padding-left: 10px;
   }
   .track input{
     padding-left: 50px; 
  }
   
   .track input[type="text"] {
-    padding: 14px 55px; /* Padding for the input field */
-    width: 250px; /* Width of the input field */
-    border: 1px solid #ccc; /* Border color */
+    padding: 14px 55px;
+    width: 250px; 
+    border: 1px solid #ccc; 
     border-radius: 5px; 
    
     
   }
+  .prohibited-list {
+    padding: 20px;
+    width: 50%;
+    height: 70%;
+    background-color: white;
+    padding: 30px;
+  }
+  
+  .prohibited-list h2 {
+    text-align: center;
+  }
+  
+  .prohibited-list ul {
+    list-style-type:square;
+    padding-left: 20px;
+  }
+  
+  .prohibited-list li {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .rate{
+    width: 50%;
+    height: 40%;
+    background-color: white;
+  }
   
   
   .track button {
-    padding: 14px 55px; /* Padding for the button */
-    background-color: black; /* Button background color */
-    color: #fff; /* Button text color */
-    border: none; /* Remove button border */
-    border-radius: 5px; /* Button border radius */
-    cursor: pointer; /* Cursor style */
+    padding: 14px 55px;
+    background-color: black; 
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer; 
     margin-left: 10px;
+    transition: 0.6s;
   }
   
   .track button:hover {
-    background-color: orange; /* Button background color on hover */
+    background-color: orange;
+    color: black; 
   }
   .track{
     transition: all 0.6s ease-out;
-    transform: translateX(-200%);
-  }
-  .track.open{
-    transform: translateX(0);
+    /* transform: translateX(-200%); */
   }
   
   .btncalc{
@@ -115,12 +142,12 @@
     
   }
   .button {
-    padding: 1em 2.1em; /* Same padding for all buttons */
+    padding: 1em 2.1em; 
     border-radius: 3px;
-    margin-right: 60px; /* Same margin for all buttons */
+    margin-right: 60px;
     color: black;
     display: inline-block;
-    background: orange; /* Apply the same color to all buttons */
+    background: orange; 
     transition: 0.3s;
     font-family: sans-serif;
     font-weight: 800;
@@ -133,6 +160,14 @@
     width: 300px; /* Set a fixed width for all buttons */
 }
 
+.prob{
+  font-weight: 900;
+  font-style: bold;
+  font-size: 24px;
+  margin-top: 30px;
+  color: rgb(5, 5, 96);
+  margin-bottom: 25px;
+}
   
   .button span {
     cursor: pointer;
@@ -164,7 +199,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background-color: rgba(0, 0, 0,0.6);
+    background-color: rgba(10, 10, 10, 0.6);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -173,7 +208,7 @@
    
   .popup-content{
     width: 90%;
-    height: 400px;
+    height: auto;
     background-color: white;
     text-align: center;
   }
@@ -187,9 +222,40 @@
     text-align: center;
     padding: 10px;
   } 
-  
-  
-  /* Add spacing around the unit dropdown */  
+  .topheadd{
+    position: absolute;
+    margin: 0;
+    width: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+    padding: 10px;
+    background-color: #ed9121;
+  }
+  .topheadd h1{
+    text-align: center;
+    padding: 10px;
+  } 
+  .topheaddd{
+    position: absolute;
+    margin: 0;
+    width: 50%;
+    margin-top: -30px;
+    padding: 10px;
+    background-color: #ed9121;
+  }
+  .topheaddd h1{
+    text-align: center;
+    padding: 1px;
+  } 
+
+  .rate p{
+    margin-top: 40px;
+    padding: 10px 50px;
+    text-align: center;
+    justify-content: center;
+    font-weight: 1000;
+  }
+    
    #unit {
     margin: 20px 0;
   }
@@ -274,9 +340,14 @@
     .hero-text {
       width: 100%;
       text-align: center;
+      
     }
     .hero-text h1 {
-      font-size: 3rem;
+      font-size: 25px;
+      
+    }
+    .hero-text p {
+      font-size: 15px;
     }
     .button{
       margin-bottom: 30px;
@@ -284,39 +355,61 @@
   }
   
   @media (max-width: 678px) {
-    .hero-text h1 {
-      font-size: 2rem;
+    .prohibited-list {
+      width: 90%;
     }
+    .topheadd{
+      width: 90%;
+    }
+    .prob{
+      font-size: 15px;
+      padding-top: 22px;
+    }
+    .prohibited-list li{
+      font-size: 10px;
+    }
+
+    .rate{
+      width: 90%;
+    }
+    .topheaddd{
+      width: 90%;
+    }
+    .tophead{
+      font-size: 12px;
+    }
+    .popup-content{
+      height: 550px;
+    }
+    
     .track button{
         margin-top: 20px;
     }
     .input-group input{
       width: 70px;
     }
-    .track.open {
+    /* .track.open {
       transform: translateX(0);
       position: absolute;
       z-index: 3;
       background-color: white;
-  }
+  } */
   .btncalc {
-    margin-top: 200px; 
+    margin-top: 40px; 
     margin-left: 60px;
   }
-  .popup-content {
-    height: 500px;
-}
+ 
   }
   
   
 
-  @keyframes fadeInUp {
+  /* @keyframes fadeInUp {
     0% {
       opacity: 0;
       transform: translateY(50px);
     }
     100% {
-      opacity: 1; /* Change opacity to 1 for element to fade in */
+      opacity: 1; 
       transform: translateY(0px);
     }
   }
@@ -327,9 +420,9 @@
       transform: translateX(-50px);
     }
     100% {
-      opacity: 1; /* Change opacity to 1 for element to fade in */
+      opacity: 1;
       transform: translateX(0px);
     }
-  }
+  } */
   
   

@@ -20,11 +20,11 @@ function Navbar() {
             </a>
           </div>
 			<nav ref={navRef}>
-				<a href="/#">Home</a>
+				{/* <a href="/#">Home</a>
 				<a href="/#">About</a>
 				<a href="/#">Services</a>
 				<a href="/#">Tracking</a>
-				<a href="/#">Contact</a>
+				<a href="/#">Contact</a> */}
                 <div className="header-cta">
             <a href="#" className="btn">Get Quote</a> 
           </div>

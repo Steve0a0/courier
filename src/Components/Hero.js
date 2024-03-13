@@ -8,6 +8,8 @@ function Hero() {
     const [trackingInfo, setTrackingInfo] = useState(null);
     const [error, setError] = useState(null);
     const [showPopup, setShowPopup] = useState(false);
+    const [showPopup1, setShowPopup1] = useState(false);
+    const [showPopup2, setShowPopup2] = useState(false);
     const [unit, setUnit] = useState('cms');
     const [length, setLength] = useState('');
     const [breadth, setBreadth] = useState('');
@@ -43,9 +45,32 @@ function Hero() {
             });
     };
 
-    const handlePop = () => {
-        setShowPopup(!showPopup);
+    const handlePop2 = () => {
+        setShowPopup(false);
+        setShowPopup1(false);
+        setShowPopup2(!showPopup2);
+        scrollToPopup('popup2');
     };
+
+    const handlePop1 = () => {
+        setShowPopup(false);
+        setShowPopup2(false);
+        setShowPopup1(!showPopup1);
+        scrollToPopup('popup1');
+    };
+
+    const handlePop = () => {
+        setShowPopup1(false);
+        setShowPopup2(false);
+        setShowPopup(!showPopup);
+        scrollToPopup('popup');
+    };
+
+    const scrollToPopup = (popupId) => {
+        const popupElement = document.getElementById(popupId);
+        popupElement.scrollIntoView({ behavior: 'smooth' });
+    };
+
     const handlePopclose = () => {
         setShowPopup(false);
     };
@@ -72,11 +97,8 @@ function Hero() {
                     <div className="hero-text">
                         <h1>Fast and Reliable Courier Services</h1>
                         <p>Get your packages delivered securely and on time with our professional courier service.</p>
-                        <div className="trackk">
-                            <button onClick={() => setIsOpen(!isOpen)}>Track Shipment</button>
-                        </div>
-                        <div className={`track ${isOpen ? 'open' : ''}`}>
-                            <h3>Track Your Shipment</h3>
+                        <div className= 'track'>
+                            
                             <form onSubmit={e => { e.preventDefault(); handleTrackShipment(); }}>
                                 <input
                                     type="text"
@@ -98,7 +120,7 @@ function Hero() {
                 </div>
             </main>
             {showPopup && (
-                <div className="popup">
+                <div className="popup" id='popup'>
                       <div class="popup-content">
                             <div class="tophead">
                                 <h1>Volumetric Calculator</h1>
@@ -138,11 +160,48 @@ function Hero() {
                 </div>
 
             )}
+
+{showPopup1 && (
+  <div className="popup" id='popup1'>
+    <div className="prohibited-list">
+    <div class="topheadd">
+    <h2>Prohibited List</h2>                       
+         </div>
+         <h1 className='prob'>The following items are prohibited:</h1>
+      <ul>
+        <li>Copra- Dry Coconut</li>
+        <li>Toy Guns</li> 
+        <li>Ink</li>
+        <li>Batteries</li>
+        <li>Nail Polish</li>
+        <li>Eyeliner/Perishable food</li>
+        <li>Fresh fruits</li>
+        <li>Raw meat</li>
+        <li>Precious Stones</li>
+        <li>Perfumes</li>
+        <li>Playing Cards, Gambling,</li>
+        <li>Gold, Silver, jewelry Products, Magnets, narcotic Drugs, Used Goods, and Currency.</li>
+      </ul>
+      
+    </div>
+  </div>
+)}
+{showPopup2 && (
+  <div className="popup" id='popup2'>
+    <div className='rate'>
+    <div class="topheaddd">
+    <h1>Rate Information</h1>                       
+         </div>
+<p>The rates vary according to weight and Volume rates available at the current time. The rates page has the most current details. The quoted rates does not include Service Tax which the government is presently charging at 18%.</p>
+    </div>
+  </div>
+  )}
+
 <div className='btncalc' >                
-<button className="button" onClick={handlePop}><span>Volumetric Calculator </span></button>
-                <button className="button"><span>Rate Calculator </span></button>
-                <button className="button"><span>Prohibited List </span></button>
-                
+<button className="button" onClick={handlePop}><span>Volumetric Calculator </span></button>  
+<button className="button" onClick={handlePop2}><span>Rate Information</span></button>  
+                <button className="button" onClick={handlePop1}><span>Prohibited List </span></button>
+
             </div>
         </>
     );

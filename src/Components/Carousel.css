@@ -1,0 +1,72 @@
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 10px 0;
+  background: black;
+  white-space: nowrap;
+  position: relative;
+  margin-top: 3%;
+  color: white;
+}
+.car h1{
+  position: relative;
+  text-align: center;  
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: 6%;
+}
+.car h1::after{
+  content: '';
+  background-color: orange;
+  width: 100px;
+  height: 5px;
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide li {
+  display: inline-block;
+  margin: 0 40px; /* Adjust margin as needed */
+}
+
+.logos-slide img {
+  height: 50px;
+}
+
+@media (max-width: 678px){
+  .logos{
+    margin-top: 9%;
+  }
+}
