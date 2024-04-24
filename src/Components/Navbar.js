@@ -1,47 +1,36 @@
-import { useRef } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
-import logo from '../images/logo.png'
-import "./Navbar.css";
+import React, { useState } from 'react'
+import logo1 from '../images/logo1.png'
+import './Navbar.css'
 
-function Navbar() {
-	const navRef = useRef();
+export const Navbar = () => {
+    const [clicked, setClicked] = useState(false);
 
-	const showNavbar = () => {
-		navRef.current.classList.toggle(
-			"responsive_nav"
-		);
-	};
+    const handleClick = () => {
+        setClicked(!clicked);
+    }
+    const openWhatsApp = () => {
+        const phoneNumber = '+353894274383'; 
+        const message = 'I want to book a ground.'; 
 
-	return (
-		<header>
-			<div className="logo">
+        const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(url, '_blank');
+    };
+
+    return (
+        <nav>
+            <div className="logo">
             <a href="#">
-              <img src={logo} alt="Company Name" />
+              <img src={logo1} alt="Company Name" />
             </a>
           </div>
-			<nav ref={navRef}>
-				{/* <a href="/#">Home</a>
-				<a href="/#">About</a>
-				<a href="/#">Services</a>
-				<a href="/#">Tracking</a>
-				<a href="/#">Contact</a> */}
-                <div className="header-cta">
-            <a href="#" className="btn">Get Quote</a> 
-          </div>
-				<button
-					className="nav-btn nav-close-btn"
-					onClick={showNavbar}>
-					<FaTimes />
-				</button>
-			</nav>
-			<button
-				className="nav-btn"
-				onClick={showNavbar}>
-				<FaBars />
-			</button>
-            
-		</header>
-	);
+            <div className='navlis'>
+                <a  className= 'booking' href='/' onClick={openWhatsApp}>Book Quote</a>
+            </div>
+            <div id='mobile' onClick={handleClick}>
+                <i id='bar' className={clicked ? 'fas fa-times' : 'fas fa-bars'}></i>
+            </div>
+        </nav>
+    )
 }
 
-export default Navbar;
+export default Navbar

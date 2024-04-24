@@ -49,27 +49,22 @@ function Hero() {
         setShowPopup(false);
         setShowPopup1(false);
         setShowPopup2(!showPopup2);
-        scrollToPopup('popup2');
     };
 
     const handlePop1 = () => {
         setShowPopup(false);
         setShowPopup2(false);
         setShowPopup1(!showPopup1);
-        scrollToPopup('popup1');
     };
 
     const handlePop = () => {
         setShowPopup1(false);
         setShowPopup2(false);
         setShowPopup(!showPopup);
-        scrollToPopup('popup');
+        
     };
 
-    const scrollToPopup = (popupId) => {
-        const popupElement = document.getElementById(popupId);
-        popupElement.scrollIntoView({ behavior: 'smooth' });
-    };
+   
 
     const handlePopclose = () => {
         setShowPopup(false);
@@ -120,7 +115,7 @@ function Hero() {
                 </div>
             </main>
             {showPopup && (
-                <div className="popup" id='popup'>
+                <div className="popup" >
                       <div class="popup-content">
                             <div class="tophead">
                                 <h1>Volumetric Calculator</h1>
@@ -162,7 +157,7 @@ function Hero() {
             )}
 
 {showPopup1 && (
-  <div className="popup" id='popup1'>
+  <div className="popup" >
     <div className="prohibited-list">
     <div class="topheadd">
     <h2>Prohibited List</h2>                       
@@ -187,7 +182,7 @@ function Hero() {
   </div>
 )}
 {showPopup2 && (
-  <div className="popup" id='popup2'>
+  <div className="popup">
     <div className='rate'>
     <div class="topheaddd">
     <h1>Rate Information</h1>                       

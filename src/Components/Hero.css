@@ -111,7 +111,7 @@
 
   .rate{
     width: 50%;
-    height: 40%;
+    height: 30%;
     background-color: white;
   }
   
@@ -249,7 +249,7 @@
   } 
 
   .rate p{
-    margin-top: 40px;
+    margin-top: 90px;
     padding: 10px 50px;
     text-align: center;
     justify-content: center;
