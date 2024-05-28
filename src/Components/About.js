@@ -3,24 +3,6 @@ import './About.css';
 import ever from '../images/ever.jpg'
 
 const About = () => {
-  window.addEventListener('scroll', reveal);
-
-  function reveal(){
-    var reveals = document.querySelectorAll('.reveal')
-
-    for (var i=0;i<reveals.length;i++){
-      var windowheight = window.innerHeight;
-      var revealtop = reveals[i].getBoundingClientRect().top;
-      var revealpoint = 150;
-
-      if (revealtop < windowheight -revealpoint){
-        reveals[i].classList.add('active');
-      }
-      else{
-        reveals[i].classList.remove('active');
-
-      }
-    }}
   return (
     <section className="hero">
       <div className="heading ">
