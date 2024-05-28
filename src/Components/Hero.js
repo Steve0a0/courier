@@ -17,7 +17,7 @@ function Hero() {
     const [dimensionalWeight, setDimensionalWeight] = useState(0);
 
     const handleTrackShipment = async () => {
-        const apiKey = 'demo-key'; // Replace this with your actual DHL API key
+        const apiKey = 'demo-key'; 
 
         const options = {
             method: 'GET',
